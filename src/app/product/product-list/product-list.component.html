@@ -1,22 +1,21 @@
-<div class="container">
+
+<div class="container" [style.background]="background">
   <table class="table">
     <thead class="thead-dark">
     <div>
-      <div class="con-md-6">
-        <input class="form-control" type="text"  [(ngModel)]="keyword" (ngModelChange)="setFilter()" placeholder="&#61442;search">
-      </div>
+     <app-filter (changeKeyword)="setFilter($event)" (changeStatus)="setFilterStatus($event)"></app-filter>
       <div>
         <button type="button" class="btn btn-info" (click)="imgToggle()">Show</button>
       </div>
     </div>
-
+    <div><input [value]="background" type="color" (change)="onChange($event.target.value)"></div>
     <tr>
       <th scope="col">STT</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
+      <th scope="col">Status</th>
       <th scope="col">Price</th>
       <th scope="col">Image</th>
-
     </tr>
     </thead>
     <tbody>
@@ -24,9 +23,11 @@
       <th scope="row">{{i +1}}</th>
       <td>{{product.name}}</td>
       <td>{{product.desc}}</td>
+      <td>{{product.status}}</td>
       <td>{{product.price}}</td>
       <td *ngIf="imageStatus"><img src="{{product.image}}"  width="100"></td>
       <button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button>
+
     </tr>
     </tbody>
   </table>

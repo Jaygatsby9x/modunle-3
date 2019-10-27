@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import {FormsModule} from '@angular/forms';
+import { FilterComponent } from './share/filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,

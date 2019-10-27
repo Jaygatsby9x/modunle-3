@@ -1,0 +1,8 @@
+<div class="row">
+  <input type="text" [(ngModel)]="keyword" (ngModelChange)="outputKeyword()">
+  <select class="btn btn-outline-success ml-3" name="" id="" (change)="outputStatus($event.target.value)" >
+    <option value="">Status</option>
+    <option value="active">Active</option>
+    <option value="not active">Not Active</option>
+  </select>
+</div>
